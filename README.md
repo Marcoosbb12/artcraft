@@ -137,6 +137,7 @@ Additional provider integrations are planned for Kling, Google, Runway, and Luma
 ## Documentation
 
 - [Development setup](./_docs/dev_setup.md)
+- [MCP server for Claude and other AI assistants](./_docs/mcp.md)
 - [Developer documentation](./_docs)
 - [Desktop build and development scripts](./script/artcraft)
 - [Roadmap](./ROADMAP.md)

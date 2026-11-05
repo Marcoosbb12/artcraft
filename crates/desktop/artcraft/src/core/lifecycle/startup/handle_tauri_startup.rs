@@ -3,6 +3,7 @@ use crate::core::lifecycle::startup::tasks::initially_size_and_position_windows:
 use crate::core::lifecycle::startup::tasks::load_provider_priority_state::load_provider_priority_state;
 use crate::core::lifecycle::startup::tasks::set_app_log_level::set_app_log_level;
 use crate::core::lifecycle::startup::tasks::spawn_discord_presence_thread::spawn_discord_presence_thread;
+use crate::core::lifecycle::startup::tasks::spawn_mcp_server::spawn_mcp_server;
 use crate::core::lifecycle::startup::tasks::spawn_main_window_thread::spawn_main_window_thread;
 use crate::core::lifecycle::startup::tasks::spawn_sora_task_polling_thread::spawn_sora_task_polling_thread;
 use crate::core::lifecycle::startup::tasks::spawn_storyteller_threads::spawn_storyteller_threads;
@@ -127,6 +128,8 @@ pub async fn handle_tauri_startup(
     storyteller_creds_manager.clone(),
     credential_cache,
   ));
+
+  spawn_mcp_server(&app, &root);
 
   spawn_discord_presence_thread()?;
 
